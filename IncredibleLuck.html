@@ -1,0 +1,75 @@
+Z<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <title>Incredible Luck Game</title>
+</head>
+<center>
+<body style="background-color:#2e2e2e">
+    <div class="container col-6">
+        <br>
+<h2> <img width="80" height="60" src="https://cdn.discordapp.com/attachments/721460421609128042/930276508487000114/pngegg.png"><p style="color:rgb(255, 42, 42);font-size:30px;font-family:Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;">Incredible Numbers</p></h2>
+<i style="color:yellow;font-size:25px;font-family:Impact;"> The Lucky Numbers<br> 4 5 7 10 12 </i>
+
+<form id="form1">
+<script>
+const luckynumbers = [5,12,4,10,7];
+	luckynumbers.sort(function(a, b){return a-b});
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+	shuffle(numbers);
+const bet = numbers.slice(0,5);
+	bet.sort(function(a, b){return a-b});
+    document.write('<i style="color:honeydew;font-size:25px;font-family:Impact;">' + "Your Numbers <br>" + bet + "<br>" + '</i>');
+function shuffle(numbers) {
+  let currentIndex = numbers.length,  randomIndex;
+  while (currentIndex != 0) {
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex--;
+    [numbers[currentIndex], numbers[randomIndex]] = [
+      numbers[randomIndex], numbers[currentIndex]];
+  }
+
+  return numbers;
+}
+var z = bet.filter(function(val) {
+  return luckynumbers.indexOf(val) != -1;
+});
+let count = z.length;
+const sound0= new Audio('https://cdn.discordapp.com/attachments/721460421609128042/930518123562541106/badluck.mp3');
+const sound1= new Audio('https://cdn.discordapp.com/attachments/721460421609128042/930517757626310656/fairluck.mp3');
+const sound2= new Audio('https://cdn.discordapp.com/attachments/721460421609128042/930517843320131614/avgluck.mp3');
+const sound3= new Audio('https://cdn.discordapp.com/attachments/721460421609128042/930517659748020254/goodluck.mp3');
+const sound4= new Audio('https://cdn.discordapp.com/attachments/721460421609128042/930517944176377936/amazingluck.mp3');
+const sound5= new Audio('https://cdn.discordapp.com/attachments/721460421609128042/930517291769155695/godluck.mp3');
+
+function playSound0(){sound0.play();}
+function playSound1(){sound1.play();}
+function playSound2(){sound2.play();}
+function playSound3(){sound3.play();}
+function playSound4(){sound4.play();}
+function playSound5(){sound5.play();} 
+
+
+    if (count==0){document.write("<br><img width=200 height=200 src='https://media.discordapp.net/attachments/721460421609128042/929938674399981588/IMG_20220110_002407.jpg?width=488&height=488'/>"+"<p style='color:honeydew;font-size:25px;font-family:Impact;'> <br> Bad Luck... </p>");playSound0();}
+
+    else if(count==1){document.write("<br><img width=200 height=200 src='https://media.discordapp.net/attachments/721460421609128042/929938477506777148/IMG_20220107_153453.jpg?width=490&height=488'/>"+"<p style='color:honeydew;font-size:25px;font-family:Impact;'> <br> Fair Luck </p>");playSound1();}
+
+    else if(count==2){document.write("<br><img width=200 height=200 src='https://media.discordapp.net/attachments/721460421609128042/929938477909438504/IMG_20220107_153528.jpg?width=488&height=488'/>"+"<p style='color:honeydew;font-size:25px;font-family:Impact;'> <br> Average Luck </p>");playSound2();}
+
+    else if(count==3){document.write("<br><img width=200 height=200 src='https://media.discordapp.net/attachments/721460421609128042/929938478467264532/IMG_20220107_153634.jpg?width=488&height=488'/>"+"<p style='color:honeydew;font-size:25px;font-family:Impact;'> <br> Good Luck </p>");playSound3();document.body.style.backgroundImage = "url('https://c.tenor.com/4XG29Dp42aIAAAAC/party-lights.gif')";document.body.style.backgroundSize = "cover";}
+
+    else if(count==4){document.write("<br><img width=200 height=200 src='https://media.discordapp.net/attachments/721460421609128042/929938478198849536/IMG_20220107_153732.jpg?width=488&height=488'/>"+"<p style='color:honeydew;font-size:25px;font-family:Impact;'> <br> Amazing Luck! </p>");playSound4();document.body.style.backgroundImage = "url('https://c.tenor.com/B2Y36jtHnKwAAAAC/party-lights-night-life.gif')";document.body.style.backgroundSize = "cover";}
+
+    else if(count==5){document.write("<br><img width=200 height=200 src='https://media.discordapp.net/attachments/721460421609128042/929938477297057852/IMG_20220107_153904.jpg?width=488&height=488'/>"+"<p style='color:honeydew;font-size:25px;font-family:Impact;'> <br> GOD LUCK!!! </p>");playSound5();document.body.style.backgroundImage = "url('https://c.tenor.com/EXlya2rVYKoAAAAC/heaven-sky.gif')";document.body.style.backgroundSize = "cover";}
+
+
+</script>
+</form>
+    <button type="submit" class="btn btn-lg btn-dark" form="form1">Try</button>
+</body>
+</center>
+</html>
